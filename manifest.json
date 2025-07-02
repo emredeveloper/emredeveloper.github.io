@@ -1,0 +1,39 @@
+{
+  "name": "Emre Developer Portfolio",
+  "short_name": "Emre Dev",
+  "description": "Full Stack Developer specializing in JavaScript, Python, React, and Django",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00d9ff",
+  "background_color": "#0a0e1a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://github.com/emredeveloper.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://github.com/emredeveloper.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

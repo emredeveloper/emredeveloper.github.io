@@ -4,109 +4,908 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emre Developer | Portfolio</title>
+  <meta name="description" content="Full Stack Developer specializing in JavaScript, Python, React, and Django. Creating modern web and mobile applications with focus on user experience and performance.">
+  <meta name="keywords" content="Full Stack Developer, JavaScript, Python, React, Django, Web Development, Mobile Development">
+  <meta name="author" content="Emre Developer">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emredeveloper.github.io/">
+  <meta property="og:title" content="Emre Developer | Portfolio">
+  <meta property="og:description" content="Full Stack Developer specializing in JavaScript, Python, React, and Django. Creating modern web and mobile applications.">
+  <meta property="og:image" content="https://github.com/emredeveloper.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://emredeveloper.github.io/">
+  <meta property="twitter:title" content="Emre Developer | Portfolio">
+  <meta property="twitter:description" content="Full Stack Developer specializing in JavaScript, Python, React, and Django.">
+  <meta property="twitter:image" content="https://github.com/emredeveloper.png">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="https://github.com/emredeveloper.png">
-  <script>
-    // Dark/Light mode toggler
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Theme colors -->
+  <meta name="theme-color" content="#00d9ff">
+  <meta name="msapplication-TileColor" content="#0a0e1a">
+  
+  <!-- Apple PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Emre Developer">
+  <link rel="apple-touch-icon" href="https://github.com/emredeveloper.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emre Developer",
+    "jobTitle": "Full Stack Developer",
+    "description": "Full Stack Developer specializing in JavaScript, Python, React, and Django. Creating modern web and mobile applications with focus on user experience and performance.",
+    "url": "https://emredeveloper.github.io",
+    "image": "https://github.com/emredeveloper.png",
+    "email": "emre@gmail.com",
+    "telephone": "+905551234567",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Istanbul",
+      "addressCountry": "Turkey"
+    },
+    "sameAs": [
+      "https://github.com/emredeveloper",
+      "https://linkedin.com/in/emredeveloper",
+      "https://twitter.com/emredeveloper"
+    ],
+    "knowsAbout": [
+      "JavaScript",
+      "Python",
+      "React.js",
+      "Django",
+      "Node.js",
+      "Web Development",
+      "Mobile Development",
+      "Full Stack Development"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Teknik Üniversite"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
     }
-    window.onload = function() {
-      if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+  }
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+    
+    // Custom events for portfolio interactions
+    function trackEvent(action, category, label) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label
+      });
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
     }
   </script>
 </head>
 <body>
   <header>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
     <div class="container hero">
-      <div class="hero-info">
-        <img src="https://github.com/emredeveloper.png" class="avatar" alt="Emre Developer Profil Fotoğrafı">
-        <h1>Emre Developer</h1>
-        <p class="tagline">Full Stack Developer | JavaScript, Python, React, Django</p>
-        <div class="social-links">
-          <a href="https://github.com/emredeveloper" target="_blank" title="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/>
+      <div class="hero-info" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://github.com/emredeveloper.png" class="avatar" alt="Emre Developer Profil Fotoğrafı" data-aos="zoom-in" data-aos-delay="200">
+        <h1 data-aos="fade-up" data-aos-delay="300">Emre Developer</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="400">
+          <span class="typing-text"></span>
+          <span class="cursor">|</span>
+        </p>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="500">
+          <a href="https://github.com/emredeveloper" target="_blank" title="GitHub" aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:emre@gmail.com" title="Mail">
-            <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/email.svg" alt="Email"/>
+          <a href="mailto:emre@gmail.com" title="Email" aria-label="Send Email">
+            <i class="fas fa-envelope"></i>
           </a>
-          <!-- Diğer sosyal medya ikonları eklenebilir -->
+          <a href="https://linkedin.com/in/emredeveloper" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/emredeveloper" target="_blank" title="Twitter" aria-label="Twitter Profile">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Tema Değiştir">🌓</button>
+        
+        <!-- CTA Buttons -->
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
+          <a href="#contact" class="btn btn-primary" onclick="smoothScrollTo('contact')">
+            <i class="fas fa-paper-plane"></i> İletişime Geç
+          </a>
+          <a href="#" class="btn btn-secondary" onclick="downloadCV()" aria-label="Download CV">
+            <i class="fas fa-download"></i> CV İndir
+          </a>
+        </div>
+        
+        <button class="theme-toggle" onclick="toggleTheme()" title="Tema Değiştir" aria-label="Toggle theme">
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon"></i>
+        </button>
       </div>
+      
+      <!-- Enhanced Background -->
       <div class="hero-bg"></div>
+      <div class="hero-particles"></div>
     </div>
-    <nav>
+    
+    <nav class="main-nav" id="mainNav">
       <ul>
-        <li><a href="#about">Hakkımda</a></li>
-        <li><a href="#projects">Projeler</a></li>
-        <li><a href="#contact">İletişim</a></li>
+        <li><a href="#about" onclick="smoothScrollTo('about')"><i class="fas fa-user"></i> Hakkımda</a></li>
+        <li><a href="#skills" onclick="smoothScrollTo('skills')"><i class="fas fa-code"></i> Yetenekler</a></li>
+        <li><a href="#projects" onclick="smoothScrollTo('projects')"><i class="fas fa-laptop-code"></i> Projeler</a></li>
+        <li><a href="#testimonials" onclick="smoothScrollTo('testimonials')"><i class="fas fa-quote-left"></i> Referanslar</a></li>
+        <li><a href="#blog" onclick="smoothScrollTo('blog')"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#contact" onclick="smoothScrollTo('contact')"><i class="fas fa-envelope"></i> İletişim</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
       <div class="container about-container">
-        <h2>Hakkımda</h2>
-        <p>
-          Selam! Ben Emre. Modern web ve mobil uygulamalar geliştiriyorum. Kullanıcı deneyimi ve performansa önem veriyorum. JavaScript, Python, React ve Django ile projeler geliştirdim; yeni teknolojilere hızlıca adapte olabilirim. Açık kaynak dünyasına katkı sağlamaktan keyif alıyorum.
-        </p>
-        <ul class="skills">
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/> JavaScript</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/> React</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/> Python</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/> Django</li>
-        </ul>
-      </div>
-    </section>
-    <section id="projects">
-      <div class="container">
-        <h2>Projelerim</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/notlarim/main/preview.png" alt="Notlarım" />
-            <div class="project-info">
-              <h3>Notlarım</h3>
-              <p>Kişisel notlarınızı hızlıca kaydedebileceğiniz ve yönetebileceğiniz web uygulaması.</p>
-              <a href="https://github.com/emredeveloper/notlarim" target="_blank" class="btn">GitHub</a>
+        <h2><i class="fas fa-user"></i> Hakkımda</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Selam! Ben Emre. Modern web ve mobil uygulamalar geliştiriyorum. Kullanıcı deneyimi ve performansa önem veriyorum. JavaScript, Python, React ve Django ile projeler geliştirdim; yeni teknolojilere hızlıca adapte olabilirim. Açık kaynak dünyasına katkı sağlamaktan keyif alıyorum.
+            </p>
+            <p>
+              <strong>3+ yıl</strong> deneyimle, startuplardan kurumsal projelere kadar çeşitli ölçeklerde çalıştım. Problem çözme odaklı yaklaşımım ve sürekli öğrenme tutkumla projelerime değer katmaya odaklanıyorum.
+            </p>
+          </div>
+          
+          <!-- Statistics -->
+          <div class="stats-grid" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Tamamlanan Proje</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Yıl Deneyim</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="25">0</div>
+              <div class="stat-label">Teknoloji & Tool</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">% Müşteri Memnuniyeti</div>
             </div>
           </div>
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/havadurumuapp/main/preview.png" alt="Hava Durumu App" />
-            <div class="project-info">
-              <h3>Hava Durumu App</h3>
-              <p>Şehir bazlı güncel hava durumu bilgisini sunan mobil uygulama.</p>
-              <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank" class="btn">GitHub</a>
+        </div>
+        
+        <!-- Experience Timeline -->
+        <div class="timeline" data-aos="fade-up" data-aos-delay="300">
+          <h3><i class="fas fa-briefcase"></i> Deneyim & Eğitim</h3>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="timeline-date">2022 - Devam</div>
+              <div class="timeline-content">
+                <h4>Senior Full Stack Developer</h4>
+                <p class="timeline-company">Freelance</p>
+                <p>Web ve mobil uygulamalar geliştirme, müşteri danışmanlığı ve proje yönetimi.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2021 - 2022</div>
+              <div class="timeline-content">
+                <h4>Frontend Developer</h4>
+                <p class="timeline-company">Tech Startup</p>
+                <p>React.js ve modern frontend teknolojileri ile kullanıcı arayüzü geliştirme.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2018 - 2022</div>
+              <div class="timeline-content">
+                <h4>Bilgisayar Mühendisliği</h4>
+                <p class="timeline-company">Teknik Üniversite</p>
+                <p>Yazılım geliştirme, algoritma tasarımı ve sistem analizi üzerine eğitim.</p>
+              </div>
             </div>
           </div>
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/emredeveloper.github.io/main/preview.png" alt="Portfolio Sitesi" />
-            <div class="project-info">
-              <h3>Portfolio Sitesi</h3>
-              <p>Kişisel portfolyo sitem. Açık kaynak!</p>
-              <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank" class="btn">GitHub</a>
-            </div>
-          </div>
-          <!-- Yeni projeler için yukarıdaki project-card bloklarını çoğalt -->
         </div>
       </div>
     </section>
-    <section id="contact">
-      <div class="container contact-container">
-        <h2>İletişim</h2>
-        <p>Benimle iletişime geçmek için:</p>
-        <ul>
-          <li>E-posta: <a href="mailto:emre@gmail.com">emre@gmail.com</a></li>
-          <li>GitHub: <a href="https://github.com/emredeveloper" target="_blank">emredeveloper</a></li>
-        </ul>
+
+    <!-- Enhanced Skills Section -->
+    <section id="skills" data-aos="fade-up">
+      <div class="container">
+        <h2><i class="fas fa-code"></i> Teknolojiler & Yetenekler</h2>
+        
+        <div class="skills-categories">
+          <!-- Frontend Skills -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-palette"></i> Frontend</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                  <span>React.js</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                  <span>HTML5</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                  <span>CSS3</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-server"></i> Backend</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                  <span>Python</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                  <span>Django</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Others -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-tools"></i> Araçlar & Diğer</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                  <span>Git</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                  <span>Docker</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                  <span>Figma</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                  <span>VS Code</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Enhanced Projects Section -->
+    <section id="projects" data-aos="fade-up">
+      <div class="container">
+        <h2><i class="fas fa-laptop-code"></i> Projelerim</h2>
+        <p class="section-description">Geliştirdiğim projeler ve açık kaynak katkılarım</p>
+        
+        <!-- Project Filters -->
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" onclick="filterProjects('all')">Tümü</button>
+          <button class="filter-btn" onclick="filterProjects('web')">Web App</button>
+          <button class="filter-btn" onclick="filterProjects('mobile')">Mobile</button>
+          <button class="filter-btn" onclick="filterProjects('fullstack')">Full Stack</button>
+        </div>
+        
+        <div class="projects-grid">
+          <div class="project-card" data-category="web fullstack" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/notlarim/main/preview.png" alt="Notlarım" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('notlarim')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="https://github.com/emredeveloper/notlarim" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Notlarım</h3>
+              <p>Kişisel notlarınızı hızlıca kaydedebileceğiniz ve yönetebileceğiniz web uygulaması.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/havadurumuapp/main/preview.png" alt="Hava Durumu App" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('havadurumuapp')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Hava Durumu App</h3>
+              <p>Şehir bazlı güncel hava durumu bilgisini sunan mobil uygulama.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">API Integration</span>
+                <span class="tech-tag">Geolocation</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/emredeveloper.github.io/main/preview.png" alt="Portfolio Sitesi" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('portfolio')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Portfolio Sitesi</h3>
+              <p>Kişisel portfolyo sitem. Modern tasarım ve performans odaklı.</p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- New Projects -->
+          <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250/00adb5/ffffff?text=E-Commerce+Platform" alt="E-Commerce Platform" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('ecommerce')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="#" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce Platform</h3>
+              <p>Modern e-ticaret platformu. Ödeme sistemi, admin paneli ve kullanıcı yönetimi.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="600">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250/393e46/ffffff?text=Task+Management" alt="Task Management App" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('taskmanager')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="#" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Task Management App</h3>
+              <p>Takım çalışması için geliştirilmiş proje ve görev yönetim uygulaması.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="700">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250/00adb5/ffffff?text=Fitness+Tracker" alt="Fitness Tracker" loading="lazy" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link" onclick="openProjectModal('fitness')">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a href="#" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Fitness Tracker</h3>
+              <p>Spor aktivitelerini takip eden ve analiz eden mobil uygulama.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Health Kit</span>
+                <span class="tech-tag">Charts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- GitHub Stats -->
+        <div class="github-stats" data-aos="fade-up" data-aos-delay="800">
+          <h3><i class="fab fa-github"></i> GitHub İstatistikleri</h3>
+          <div class="github-cards">
+            <img src="https://github-readme-stats.vercel.app/api?username=emredeveloper&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" loading="lazy">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=emredeveloper&layout=compact&theme=dark&hide_border=true" alt="Top Languages" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" data-aos="fade-up">
+      <div class="container">
+        <h2><i class="fas fa-quote-left"></i> Referanslar</h2>
+        <p class="section-description">Çalıştığım kişilerden gelen yorumlar</p>
+        
+        <div class="testimonials-slider">
+          <div class="testimonial active" data-aos="fade-up">
+            <div class="testimonial-content">
+              <p>"Emre ile çalışmak harika bir deneyimdi. Projeyi zamanında teslim etti ve kalitesi mükemmeldi. Teknik bilgisi ve problem çözme yeteneği gerçekten etkileyici."</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmet Yılmaz">
+                <div class="author-info">
+                  <h4>Ahmet Yılmaz</h4>
+                  <span>Proje Yöneticisi, TechCorp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial" data-aos="fade-up">
+            <div class="testimonial-content">
+              <p>"Modern teknolojilere hakimiyeti ve kullanıcı deneyimi odaklı yaklaşımı sayesinde uygulamamızı bir üst seviyeye taşıdı. Kesinlikle tavsiye ederim."</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Zeynep Kaya">
+                <div class="author-info">
+                  <h4>Zeynep Kaya</h4>
+                  <span>UI/UX Designer, StartupXYZ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial" data-aos="fade-up">
+            <div class="testimonial-content">
+              <p>"Emre'nin açık kaynak projelere katkısı ve öğrenmeye olan tutkusu takım arkadaşlarımıza da ilham verdi. Mükemmel bir geliştirici!"</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Mehmet Özkan">
+                <div class="author-info">
+                  <h4>Mehmet Özkan</h4>
+                  <span>Senior Developer, DevTeam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-nav">
+          <button class="testimonial-btn active" onclick="showTestimonial(0)"></button>
+          <button class="testimonial-btn" onclick="showTestimonial(1)"></button>
+          <button class="testimonial-btn" onclick="showTestimonial(2)"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" data-aos="fade-up">
+      <div class="container">
+        <h2><i class="fas fa-blog"></i> Son Yazılarım</h2>
+        <p class="section-description">Teknoloji ve geliştirme üzerine düşüncelerim</p>
+        
+        <div class="blog-grid">
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-image">
+              <img src="https://via.placeholder.com/400x200/00adb5/ffffff?text=React+Hooks" alt="React Hooks Guide" loading="lazy">
+              <div class="blog-category">React</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fas fa-calendar"></i> 15 Aralık 2024</span>
+                <span class="blog-read-time"><i class="fas fa-clock"></i> 5 dk okuma</span>
+              </div>
+              <h3>React Hooks ile Modern Component Geliştirme</h3>
+              <p>React Hooks'un sunduğu imkanları ve modern React uygulamalarında nasıl etkili kullanılacağını detaylı şekilde inceliyoruz.</p>
+              <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-image">
+              <img src="https://via.placeholder.com/400x200/393e46/ffffff?text=Python+Tips" alt="Python Performance Tips" loading="lazy">
+              <div class="blog-category">Python</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fas fa-calendar"></i> 8 Aralık 2024</span>
+                <span class="blog-read-time"><i class="fas fa-clock"></i> 7 dk okuma</span>
+              </div>
+              <h3>Python Performance Optimizasyonu İpuçları</h3>
+              <p>Python uygulamalarınızın performansını artırmak için kullanabileceğiniz praktik yöntemler ve best practice'ler.</p>
+              <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="blog-image">
+              <img src="https://via.placeholder.com/400x200/00adb5/ffffff?text=Web+Security" alt="Web Security Best Practices" loading="lazy">
+              <div class="blog-category">Güvenlik</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fas fa-calendar"></i> 1 Aralık 2024</span>
+                <span class="blog-read-time"><i class="fas fa-clock"></i> 10 dk okuma</span>
+              </div>
+              <h3>Web Uygulamalarında Güvenlik Best Practices</h3>
+              <p>Modern web uygulamalarını güvenli hale getirmek için uygulamanız gereken önemli güvenlik önlemleri.</p>
+              <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="blog-cta" data-aos="fade-up" data-aos-delay="400">
+          <a href="/blog" class="btn btn-outline">
+            <i class="fas fa-blog"></i> Tüm Yazıları Görüntüle
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Contact Section (keeping previous version) -->
+    <section id="contact" data-aos="fade-up">
+      <div class="container">
+        <h2><i class="fas fa-envelope"></i> İletişim</h2>
+        <p class="section-description">Projeleriniz için benimle iletişime geçin</p>
+        
+        <div class="contact-content">
+          <div class="contact-info" data-aos="fade-right">
+            <h3>Hadi Konuşalım!</h3>
+            <p>Yeni bir proje mi planlıyorsunuz? Mevcut bir uygulamanızı mı geliştirmek istiyorsunuz? Benimle iletişime geçin, birlikte harika şeyler yaratalım!</p>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <div class="method-info">
+                  <h4>Email</h4>
+                  <a href="mailto:emre@gmail.com">emre@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <i class="fab fa-github"></i>
+                <div class="method-info">
+                  <h4>GitHub</h4>
+                  <a href="https://github.com/emredeveloper" target="_blank">github.com/emredeveloper</a>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <i class="fab fa-linkedin"></i>
+                <div class="method-info">
+                  <h4>LinkedIn</h4>
+                  <a href="https://linkedin.com/in/emredeveloper" target="_blank">linkedin.com/in/emredeveloper</a>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <i class="fas fa-phone"></i>
+                <div class="method-info">
+                  <h4>Telefon</h4>
+                  <a href="tel:+905551234567">+90 555 123 45 67</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-media">
+              <h4>Sosyal Medya</h4>
+              <div class="social-links">
+                <a href="https://github.com/emredeveloper" target="_blank" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/emredeveloper" target="_blank" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/emredeveloper" target="_blank" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/emredeveloper" target="_blank" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-container" data-aos="fade-left">
+            <form class="contact-form" id="contactForm" netlify>
+              <div class="form-group">
+                <label for="name">Adınız <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">E-posta <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Konu</label>
+                <input type="text" id="subject" name="subject">
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mesajınız <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="6" required placeholder="Projeniz hakkında detayları paylaşın..."></textarea>
+                <span class="error-message" id="messageError"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="budget">Proje Bütçesi</label>
+                <select id="budget" name="budget">
+                  <option value="">Bütçe aralığını seçin</option>
+                  <option value="1000-5000">$1,000 - $5,000</option>
+                  <option value="5000-10000">$5,000 - $10,000</option>
+                  <option value="10000-25000">$10,000 - $25,000</option>
+                  <option value="25000+">$25,000+</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn btn-primary submit-btn">
+                <span class="btn-text">
+                  <i class="fas fa-paper-plane"></i> Mesaj Gönder
+                </span>
+                <span class="btn-loading" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i> Gönderiliyor...
+                </span>
+              </button>
+            </form>
+            
+            <div class="form-success" id="formSuccess" style="display: none;">
+              <i class="fas fa-check-circle"></i>
+              <h3>Mesajınız Gönderildi!</h3>
+              <p>En kısa sürede size geri dönüş yapacağım. Teşekkürler!</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Enhanced Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Emre Developer. Tüm hakları saklıdır.</p>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Emre Developer</h3>
+          <p>Modern web ve mobil uygulamalar geliştiriyorum. Projeleriniz için benimle iletişime geçin!</p>
+          <div class="footer-social">
+            <a href="https://github.com/emredeveloper" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/emredeveloper" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/emredeveloper" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:emre@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="#about" onclick="smoothScrollTo('about')">Hakkımda</a></li>
+              <li><a href="#skills" onclick="smoothScrollTo('skills')">Yetenekler</a></li>
+              <li><a href="#projects" onclick="smoothScrollTo('projects')">Projeler</a></li>
+              <li><a href="#contact" onclick="smoothScrollTo('contact')">İletişim</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Servisler</h4>
+            <ul>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Mobile Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Consulting</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>İletişim</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> emre@gmail.com</li>
+              <li><i class="fas fa-phone"></i> +90 555 123 45 67</li>
+              <li><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Emre Developer. Tüm hakları saklıdır.</p>
+        <p>❤️ ile geliştirildi - <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank">Açık Kaynak</a></p>
+      </div>
     </div>
   </footer>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-top" onclick="scrollToTop()" title="Yukarı çık">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 </body>
 </html>
