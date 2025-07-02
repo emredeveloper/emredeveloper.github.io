@@ -3,110 +3,655 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emre Developer | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- SEO Meta Tags -->
+  <title>Emre Developer | Modern Full Stack Developer Portfolio</title>
+  <meta name="description" content="Emre Developer - Modern web ve mobil uygulamalar geliştiren Full Stack Developer. JavaScript, Python, React, Django uzmanı. Profesyonel portfolio ve projeler.">
+  <meta name="keywords" content="Emre Developer, Full Stack Developer, JavaScript, Python, React, Django, Web Development, Portfolio">
+  <meta name="author" content="Emre Developer">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emre Developer | Modern Full Stack Developer Portfolio">
+  <meta property="og:description" content="Modern web ve mobil uygulamalar geliştiren Full Stack Developer. JavaScript, Python, React, Django uzmanı.">
+  <meta property="og:image" content="https://github.com/emredeveloper.png">
+  <meta property="og:url" content="https://emredeveloper.github.io">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emre Developer | Full Stack Developer">
+  <meta name="twitter:description" content="Modern web ve mobil uygulamalar geliştiren Full Stack Developer">
+  <meta name="twitter:image" content="https://github.com/emredeveloper.png">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#00adb5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Emre Developer">
+  
+  <!-- Favicon -->
   <link rel="icon" href="https://github.com/emredeveloper.png">
-  <script>
-    // Dark/Light mode toggler
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    }
-    window.onload = function() {
-      if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
-    }
-  </script>
+  <link rel="apple-touch-icon" href="https://github.com/emredeveloper.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://github.com">
+  
+  <!-- Modern JavaScript -->
+  <script type="module" src="js/main.js"></script>
+  
+  <!-- Fallback for older browsers -->
+  <script nomodule src="js/fallback.js"></script>
 </head>
 <body>
   <header>
     <div class="container hero">
-      <div class="hero-info">
+      <!-- Particles Background -->
+      <div id="particles-js" class="particles-container"></div>
+      
+      <div class="hero-info" data-animate="fadeInUp">
         <img src="https://github.com/emredeveloper.png" class="avatar" alt="Emre Developer Profil Fotoğrafı">
         <h1>Emre Developer</h1>
-        <p class="tagline">Full Stack Developer | JavaScript, Python, React, Django</p>
+        <p class="tagline typing-text">Full Stack Developer</p>
+        
+        <!-- Enhanced Social Links -->
         <div class="social-links">
-          <a href="https://github.com/emredeveloper" target="_blank" title="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/>
+          <a href="https://github.com/emredeveloper" target="_blank" title="GitHub" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
           </a>
-          <a href="mailto:emre@gmail.com" title="Mail">
-            <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/email.svg" alt="Email"/>
+          <a href="mailto:emre@gmail.com" title="Email" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.748L12 10.324l9.616-6.503h.748c.904 0 1.636.732 1.636 1.636Z"/>
+            </svg>
           </a>
-          <!-- Diğer sosyal medya ikonları eklenebilir -->
+          <a href="https://linkedin.com/in/emredeveloper" target="_blank" title="LinkedIn" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/emredeveloper" target="_blank" title="Twitter" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Tema Değiştir">🌓</button>
+        
+        <!-- Call to Action Buttons -->
+        <div class="cta-buttons" data-animate="fadeInUp" data-delay="300">
+          <a href="#contact" class="btn btn-primary">İletişime Geç</a>
+          <a href="/cv.pdf" class="btn btn-secondary" download>CV İndir</a>
+        </div>
+        
+        <button class="theme-toggle" onclick="toggleTheme()" title="Tema Değiştir" aria-label="Tema Değiştir">🌓</button>
       </div>
       <div class="hero-bg"></div>
     </div>
-    <nav>
+    <nav role="navigation" aria-label="Ana menü">
       <ul>
         <li><a href="#about">Hakkımda</a></li>
+        <li><a href="#experience">Deneyim</a></li>
         <li><a href="#projects">Projeler</a></li>
+        <li><a href="#services">Hizmetler</a></li>
         <li><a href="#contact">İletişim</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="about">
+    <section id="about" data-animate="fadeInUp">
       <div class="container about-container">
         <h2>Hakkımda</h2>
-        <p>
-          Selam! Ben Emre. Modern web ve mobil uygulamalar geliştiriyorum. Kullanıcı deneyimi ve performansa önem veriyorum. JavaScript, Python, React ve Django ile projeler geliştirdim; yeni teknolojilere hızlıca adapte olabilirim. Açık kaynak dünyasına katkı sağlamaktan keyif alıyorum.
-        </p>
-        <ul class="skills">
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/> JavaScript</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/> React</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/> Python</li>
-          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/> Django</li>
-        </ul>
-      </div>
-    </section>
-    <section id="projects">
-      <div class="container">
-        <h2>Projelerim</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/notlarim/main/preview.png" alt="Notlarım" />
-            <div class="project-info">
-              <h3>Notlarım</h3>
-              <p>Kişisel notlarınızı hızlıca kaydedebileceğiniz ve yönetebileceğiniz web uygulaması.</p>
-              <a href="https://github.com/emredeveloper/notlarim" target="_blank" class="btn">GitHub</a>
+        
+        <!-- Statistics Cards -->
+        <div class="stats-grid" data-animate="fadeInUp" data-delay="200">
+          <div class="stat-card">
+            <div class="stat-number" data-target="25">0</div>
+            <div class="stat-label">Tamamlanan Proje</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Yıl Deneyim</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Teknoloji</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">% Müşteri Memnuniyeti</div>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text" data-animate="fadeInLeft" data-delay="400">
+            <p>
+              Merhaba! Ben Emre, modern web ve mobil uygulamalar geliştiren tutkulu bir <strong>Full Stack Developer</strong>'ım. 
+              3+ yıllık deneyimim boyunca kullanıcı odaklı, performanslı ve ölçeklenebilir çözümler geliştirmeye odaklandım.
+            </p>
+            <p>
+              JavaScript ekosisteminde uzmanlaşmış olup, React, Node.js ve modern web teknolojileri ile çalışıyorum. 
+              Python ve Django ile backend geliştirme konusunda da deneyimliyim. Temiz kod yazma, test-driven development 
+              ve agile metodolojilerle çalışma konularında titizim.
+            </p>
+            <p>
+              Açık kaynak projelerine katkı sağlamayı ve teknoloji topluluğuyla bilgi paylaşımını seviyorum. 
+              Sürekli öğrenmeye açık, yeni teknolojileri hızla adapte edebilen ve takım çalışmasına uygun biriyim.
+            </p>
+          </div>
+          
+          <div class="skills-section" data-animate="fadeInRight" data-delay="600">
+            <h3>Teknik Yetenekler</h3>
+            <div class="skills-progress">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript / TypeScript</span>
+                  <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="95"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">React / Next.js</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="90"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js / Express</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="85"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Python / Django</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="80"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Database (SQL/NoSQL)</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="75"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/havadurumuapp/main/preview.png" alt="Hava Durumu App" />
-            <div class="project-info">
-              <h3>Hava Durumu App</h3>
-              <p>Şehir bazlı güncel hava durumu bilgisini sunan mobil uygulama.</p>
-              <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank" class="btn">GitHub</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <img src="https://raw.githubusercontent.com/emredeveloper/emredeveloper.github.io/main/preview.png" alt="Portfolio Sitesi" />
-            <div class="project-info">
-              <h3>Portfolio Sitesi</h3>
-              <p>Kişisel portfolyo sitem. Açık kaynak!</p>
-              <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank" class="btn">GitHub</a>
-            </div>
-          </div>
-          <!-- Yeni projeler için yukarıdaki project-card bloklarını çoğalt -->
+        </div>
+        
+        <!-- Technology Stack -->
+        <div class="tech-stack" data-animate="fadeInUp" data-delay="800">
+          <h3>Kullandığım Teknolojiler</h3>
+          <ul class="skills">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/> JavaScript</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"/> TypeScript</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/> React</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"/> Next.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"/> Node.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/> Python</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/> Django</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/> PostgreSQL</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/> MongoDB</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/> Git</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"/> Docker</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"/> AWS</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section id="contact">
+    
+    <section id="experience" data-animate="fadeInUp">
+      <div class="container">
+        <h2>Deneyim & Eğitim</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item" data-animate="fadeInLeft" data-delay="200">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2022 - Devam Ediyor</div>
+              <h3>Senior Full Stack Developer</h3>
+              <h4>Tech Startup</h4>
+              <p>React, Node.js ve PostgreSQL kullanarak SaaS ürünlerinin geliştirilmesi. Microservices mimarisi ve cloud deployment konularında liderlik. Takım yönetimi ve mentoring.</p>
+              <div class="timeline-skills">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>AWS</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-animate="fadeInRight" data-delay="400">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2021 - 2022</div>
+              <h3>Full Stack Developer</h3>
+              <h4>Yazılım Ajansı</h4>
+              <p>Çeşitli müşteri projeleri için modern web uygulamaları geliştirme. Django REST API'ları ve React frontend'leri oluşturma. Agile metodolojilerle çalışma.</p>
+              <div class="timeline-skills">
+                <span>Django</span>
+                <span>React</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>MySQL</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-animate="fadeInLeft" data-delay="600">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2020 - 2021</div>
+              <h3>Junior Developer</h3>
+              <h4>Teknoloji Şirketi</h4>
+              <p>Web uygulamaları geliştirme konusunda temel deneyim kazanma. HTML, CSS, JavaScript ve PHP ile projeler üzerinde çalışma. Code review süreçlerine katılım.</p>
+              <div class="timeline-skills">
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item education" data-animate="fadeInRight" data-delay="800">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2018 - 2022</div>
+              <h3>Bilgisayar Mühendisliği</h3>
+              <h4>Teknik Üniversite</h4>
+              <p>Yazılım mühendisliği, algoritma analizi, veri yapıları ve veritabanı yönetimi konularında eğitim. Mezuniyet projesi: Real-time chat uygulaması.</p>
+              <div class="timeline-skills">
+                <span>Algoritma</span>
+                <span>Veri Yapıları</span>
+                <span>Yazılım Mühendisliği</span>
+                <span>Veritabanı</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" data-animate="fadeInUp">
+      <div class="container">
+        <h2>Projelerim</h2>
+        <p class="section-description">Geliştirdiğim öne çıkan projelere göz atın. Her proje farklı teknolojiler ve çözüm yaklaşımları içermektedir.</p>
+        
+        <!-- Project Filters -->
+        <div class="project-filters" data-animate="fadeInUp" data-delay="200">
+          <button class="filter-btn active" data-filter="all">Tümü</button>
+          <button class="filter-btn" data-filter="web">Web Uygulamaları</button>
+          <button class="filter-btn" data-filter="mobile">Mobil Uygulamalar</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+        </div>
+        
+        <div class="projects-grid" data-animate="fadeInUp" data-delay="400">
+          <div class="project-card" data-category="web fullstack">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/notlarim/main/preview.png" alt="Notlarım" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn btn-secondary project-detail-btn" data-project="notlarim">Detayları Gör</button>
+                <a href="https://emredeveloper.github.io/notlarim" target="_blank" class="btn btn-primary">Canlı Demo</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Notlarım</h3>
+                <div class="project-stats">
+                  <span class="stat">⭐ 15</span>
+                  <span class="stat">🍴 5</span>
+                </div>
+              </div>
+              <p>Modern ve kullanıcı dostu not alma uygulaması. Real-time senkronizasyon ve kategorize edilmiş notlar.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Socket.io</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/emredeveloper/notlarim" target="_blank" class="btn btn-outline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="mobile">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/havadurumuapp/main/preview.png" alt="Hava Durumu App" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn btn-secondary project-detail-btn" data-project="havadurum">Detayları Gör</button>
+                <a href="https://emredeveloper.github.io/havadurumuapp" target="_blank" class="btn btn-primary">Canlı Demo</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Hava Durumu App</h3>
+                <div class="project-stats">
+                  <span class="stat">⭐ 8</span>
+                  <span class="stat">🍴 3</span>
+                </div>
+              </div>
+              <p>Anlık hava durumu bilgileri ve 7 günlük tahmin sunan mobil-first uygulama. Konum tabanlı servis.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">API Integration</span>
+                <span class="tech-tag">Geolocation</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank" class="btn btn-outline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-category="web frontend">
+            <div class="project-image">
+              <img src="https://raw.githubusercontent.com/emredeveloper/emredeveloper.github.io/main/preview.png" alt="Portfolio Sitesi" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn btn-secondary project-detail-btn" data-project="portfolio">Detayları Gör</button>
+                <a href="https://emredeveloper.github.io" target="_blank" class="btn btn-primary">Canlı Demo</a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Portfolio Sitesi</h3>
+                <div class="project-stats">
+                  <span class="stat">⭐ 25</span>
+                  <span class="stat">🍴 12</span>
+                </div>
+              </div>
+              <p>Modern tasarımlı, responsive ve performanslı kişisel portfolio websitesi. PWA özellikleri ve dark mode desteği.</p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank" class="btn btn-outline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="services" data-animate="fadeInUp">
+      <div class="container">
+        <h2>Hizmetlerim</h2>
+        <p class="section-description">Sizin için geliştirebileceğim çözümler ve sunabileceğim hizmetler.</p>
+        
+        <div class="services-grid">
+          <div class="service-card" data-animate="fadeInUp" data-delay="200">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 3H4c-1.1 0-1.99.9-1.99 2L2 19c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM4 6h16v2H4V6zm0 5h16v6H4v-6z"/>
+              </svg>
+            </div>
+            <h3>Web Uygulaması Geliştirme</h3>
+            <p>Modern web teknolojileri ile responsive, hızlı ve kullanıcı dostu web uygulamaları geliştiriyorum.</p>
+            <ul>
+              <li>React, Vue.js, Angular</li>
+              <li>Node.js, Express.js</li>
+              <li>REST API & GraphQL</li>
+              <li>Database entegrasyonu</li>
+            </ul>
+          </div>
+          
+          <div class="service-card" data-animate="fadeInUp" data-delay="400">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+              </svg>
+            </div>
+            <h3>Mobil Uygulama Geliştirme</h3>
+            <p>Cross-platform mobil uygulamalar ve Progressive Web Apps (PWA) geliştirme hizmetleri sunuyorum.</p>
+            <ul>
+              <li>React Native</li>
+              <li>Progressive Web Apps</li>
+              <li>Responsive Design</li>
+              <li>App Store dağıtımı</li>
+            </ul>
+          </div>
+          
+          <div class="service-card" data-animate="fadeInUp" data-delay="600">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3>Danışmanlık & Optimizasyon</h3>
+            <p>Mevcut projelerin performans optimizasyonu, code review ve teknik danışmanlık hizmetleri.</p>
+            <ul>
+              <li>Kod incelemeleri</li>
+              <li>Performans optimizasyonu</li>
+              <li>Güvenlik denetimleri</li>
+              <li>Teknik mimari danışmanlığı</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" data-animate="fadeInUp">
       <div class="container contact-container">
         <h2>İletişim</h2>
-        <p>Benimle iletişime geçmek için:</p>
-        <ul>
-          <li>E-posta: <a href="mailto:emre@gmail.com">emre@gmail.com</a></li>
-          <li>GitHub: <a href="https://github.com/emredeveloper" target="_blank">emredeveloper</a></li>
-        </ul>
+        <p class="section-description">Projeleriniz için benimle iletişime geçin. En kısa sürede geri dönüş yapacağım.</p>
+        
+        <div class="contact-content">
+          <div class="contact-info" data-animate="fadeInLeft" data-delay="200">
+            <h3>İletişim Bilgileri</h3>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.748L12 10.324l9.616-6.503h.748c.904 0 1.636.732 1.636 1.636Z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:emre@gmail.com">emre@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub</h4>
+                <a href="https://github.com/emredeveloper" target="_blank" rel="noopener">github.com/emredeveloper</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/emredeveloper" target="_blank" rel="noopener">linkedin.com/in/emredeveloper</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-wrapper" data-animate="fadeInRight" data-delay="400">
+            <form id="contact-form" class="contact-form" netlify>
+              <h3>Proje Teklifi Gönderin</h3>
+              
+              <div class="form-group">
+                <label for="name">Ad Soyad *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Konu</label>
+                <select id="subject" name="subject">
+                  <option value="">Konu seçin</option>
+                  <option value="web-development">Web Uygulama Geliştirme</option>
+                  <option value="mobile-development">Mobil Uygulama Geliştirme</option>
+                  <option value="consultation">Danışmanlık</option>
+                  <option value="optimization">Optimizasyon</option>
+                  <option value="other">Diğer</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="budget">Bütçe Aralığı</label>
+                <select id="budget" name="budget">
+                  <option value="">Bütçe seçin</option>
+                  <option value="5k-10k">5.000₺ - 10.000₺</option>
+                  <option value="10k-25k">10.000₺ - 25.000₺</option>
+                  <option value="25k-50k">25.000₺ - 50.000₺</option>
+                  <option value="50k+">50.000₺+</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mesaj *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Projeniz hakkında detayları paylaşın..." required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Mesaj Gönder</span>
+                <span class="btn-loading" style="display: none;">Gönderiliyor...</span>
+              </button>
+            </form>
+            
+            <div id="form-success" class="form-message success" style="display: none;">
+              <h4>✅ Mesajınız başarıyla gönderildi!</h4>
+              <p>En kısa sürede geri dönüş yapacağım.</p>
+            </div>
+            
+            <div id="form-error" class="form-message error" style="display: none;">
+              <h4>❌ Mesaj gönderilemedi</h4>
+              <p>Lütfen tekrar deneyin veya direkt email gönderin.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+  
   <footer>
     <div class="container">
-      <p>© 2025 Emre Developer. Tüm hakları saklıdır.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Emre Developer</h4>
+          <p>Modern web ve mobil uygulamalar geliştiren Full Stack Developer</p>
+          <div class="footer-social">
+            <a href="https://github.com/emredeveloper" target="_blank" rel="noopener" title="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/emredeveloper" target="_blank" rel="noopener" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="https://twitter.com/emredeveloper" target="_blank" rel="noopener" title="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Hızlı Linkler</h4>
+          <ul>
+            <li><a href="#about">Hakkımda</a></li>
+            <li><a href="#experience">Deneyim</a></li>
+            <li><a href="#projects">Projeler</a></li>
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#contact">İletişim</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Teknolojiler</h4>
+          <ul>
+            <li>JavaScript & TypeScript</li>
+            <li>React & Next.js</li>
+            <li>Node.js & Express</li>
+            <li>Python & Django</li>
+            <li>Database Management</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>İletişim</h4>
+          <ul>
+            <li><a href="mailto:emre@gmail.com">emre@gmail.com</a></li>
+            <li>İstanbul, Türkiye</li>
+            <li>Freelance & Remote</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Emre Developer. Tüm hakları saklıdır.</p>
+        <p>Bu site <strong>JavaScript</strong>, <strong>CSS3</strong> ve <strong>PWA</strong> teknolojileri ile geliştirilmiştir.</p>
+      </div>
     </div>
   </footer>
+  
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modal-body">
+        <!-- Modal content will be loaded here -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
