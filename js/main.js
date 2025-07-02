@@ -7,6 +7,7 @@ import { AnimationObserver } from './modules/animations.js';
 import { ProjectFilter } from './modules/project-filter.js';
 import { ContactForm } from './modules/contact-form.js';
 import { LanguageManager } from './modules/language.js';
+import { StatsCounter } from './modules/stats.js';
 
 class App {
   constructor() {
@@ -21,6 +22,7 @@ class App {
       this.modules.smoothScroll = new SmoothScroll();
       this.modules.animations = new AnimationObserver();
       this.modules.language = new LanguageManager();
+      this.modules.stats = new StatsCounter();
       
       // Initialize feature modules when DOM is ready
       document.addEventListener('DOMContentLoaded', () => {
