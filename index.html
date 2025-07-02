@@ -1,60 +1,112 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Emre Developer | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emre Developer | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://github.com/emredeveloper.png">
+  <script>
+    // Dark/Light mode toggler
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+    window.onload = function() {
+      if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Profil Fotoğrafı" class="avatar">
-            <h1>Emre Developer</h1>
-            <p>Yazılım Geliştirici | Web & Mobil</p>
-            <nav>
-                <a href="#about">Hakkımda</a>
-                <a href="#projects">Projelerim</a>
-                <a href="#contact">İletişim</a>
-            </nav>
+  <header>
+    <div class="container hero">
+      <div class="hero-info">
+        <img src="https://github.com/emredeveloper.png" class="avatar" alt="Emre Developer Profil Fotoğrafı">
+        <h1>Emre Developer</h1>
+        <p class="tagline">Full Stack Developer | JavaScript, Python, React, Django</p>
+        <div class="social-links">
+          <a href="https://github.com/emredeveloper" target="_blank" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/>
+          </a>
+          <a href="mailto:emre@gmail.com" title="Mail">
+            <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/email.svg" alt="Email"/>
+          </a>
+          <!-- Diğer sosyal medya ikonları eklenebilir -->
         </div>
-    </header>
-    <main>
-        <section id="about">
-            <h2>Hakkımda</h2>
-            <p>Merhaba! Ben Emre. Web ve mobil uygulama geliştirme konusunda tutkuluyum. Modern teknolojileri kullanarak kullanıcı odaklı ve performanslı uygulamalar geliştiriyorum.</p>
-        </section>
-        <section id="projects">
-            <h2>Projelerim</h2>
-            <div class="project-list">
-                <div class="project-card">
-                    <h3>Notlarım</h3>
-                    <p>Kişisel notlarınızı tutabileceğiniz basit ve hızlı bir web uygulaması.</p>
-                    <a href="https://github.com/emredeveloper/notlarim" target="_blank">GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3>Hava Durumu App</h3>
-                    <p>Şehrinize göre anlık hava durumu bilgisini gösteren mobil uygulama.</p>
-                    <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank">GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3>Portfolio Sitesi</h3>
-                    <p>Kendi portfolyo sitem. Açık kaynak!</p>
-                    <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank">GitHub</a>
-                </div>
-                <!-- Buraya yeni projelerini ekleyebilirsin -->
+        <button class="theme-toggle" onclick="toggleTheme()" title="Tema Değiştir">🌓</button>
+      </div>
+      <div class="hero-bg"></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">Hakkımda</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <div class="container about-container">
+        <h2>Hakkımda</h2>
+        <p>
+          Selam! Ben Emre. Modern web ve mobil uygulamalar geliştiriyorum. Kullanıcı deneyimi ve performansa önem veriyorum. JavaScript, Python, React ve Django ile projeler geliştirdim; yeni teknolojilere hızlıca adapte olabilirim. Açık kaynak dünyasına katkı sağlamaktan keyif alıyorum.
+        </p>
+        <ul class="skills">
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/> JavaScript</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/> React</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/> Python</li>
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/> Django</li>
+        </ul>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <h2>Projelerim</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/emredeveloper/notlarim/main/preview.png" alt="Notlarım" />
+            <div class="project-info">
+              <h3>Notlarım</h3>
+              <p>Kişisel notlarınızı hızlıca kaydedebileceğiniz ve yönetebileceğiniz web uygulaması.</p>
+              <a href="https://github.com/emredeveloper/notlarim" target="_blank" class="btn">GitHub</a>
             </div>
-        </section>
-        <section id="contact">
-            <h2>İletişim</h2>
-            <ul>
-                <li>E-posta: <a href="mailto:emre@gmail.com">emre@gmail.com</a></li>
-                <li>GitHub: <a href="https://github.com/emredeveloper" target="_blank">emredeveloper</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 Emre Developer</p>
-    </footer>
+          </div>
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/emredeveloper/havadurumuapp/main/preview.png" alt="Hava Durumu App" />
+            <div class="project-info">
+              <h3>Hava Durumu App</h3>
+              <p>Şehir bazlı güncel hava durumu bilgisini sunan mobil uygulama.</p>
+              <a href="https://github.com/emredeveloper/havadurumuapp" target="_blank" class="btn">GitHub</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/emredeveloper/emredeveloper.github.io/main/preview.png" alt="Portfolio Sitesi" />
+            <div class="project-info">
+              <h3>Portfolio Sitesi</h3>
+              <p>Kişisel portfolyo sitem. Açık kaynak!</p>
+              <a href="https://github.com/emredeveloper/emredeveloper.github.io" target="_blank" class="btn">GitHub</a>
+            </div>
+          </div>
+          <!-- Yeni projeler için yukarıdaki project-card bloklarını çoğalt -->
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container contact-container">
+        <h2>İletişim</h2>
+        <p>Benimle iletişime geçmek için:</p>
+        <ul>
+          <li>E-posta: <a href="mailto:emre@gmail.com">emre@gmail.com</a></li>
+          <li>GitHub: <a href="https://github.com/emredeveloper" target="_blank">emredeveloper</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>© 2025 Emre Developer. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
 </body>
 </html>
