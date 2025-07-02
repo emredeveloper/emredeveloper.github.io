@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Block access to development files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /README.md
+Disallow: /*.log
+Disallow: /tmp/
+Disallow: /.env
+
+# Allow important files
+Allow: /manifest.json
+Allow: /sw.js
+Allow: /style.css
+Allow: /script.js
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://emredeveloper.github.io/sitemap.xml
